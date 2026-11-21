@@ -104,7 +104,7 @@ function search() {
   const ul = document.createElement('ul'); let n = 0;
   IDX.s.forEach(e => { const all = (e.t + ' ' + e.x).toLowerCase(); if (terms.every(t => all.includes(t))) { n++; if (n <= 30) addHit(ul, e.u, e.p + (e.t !== e.p ? ' › ' + e.t : ''), snip(e.x, t0), t0); } });
   IDX.g.forEach(([ja, en, d]) => { const all = (en + ' ' + ja + ' ' + d).toLowerCase(); if (terms.every(t => all.includes(t))) { n++; if (n <= 45) addHit(ul, '/glossary/?q=' + encodeURIComponent(raw), '用語集 › ' + ja + (en && en !== '(未確認)' ? ' (' + en + ')' : ''), d, t0); } });
-  IDX.t.forEach(([ja, en, d]) => { const all = (en + ' ' + ja + ' ' + d).toLowerCase(); if (terms.every(t => all.includes(t))) { n++; if (n <= 60) addHit(ul, '/traits/?q=' + encodeURIComponent(ja) + '#ttable', '特性 › ' + ja + ' (' + en + ')', d, t0); } });
+  IDX.t.forEach(([ja, en, d]) => { const all = (en + ' ' + ja + ' ' + d).toLowerCase(); if (terms.every(t => all.includes(t))) { n++; if (n <= 60) addHit(ul, '/traits/?q=' + encodeURIComponent(ja) + '#ttable', '特性 › ' + ja, d, t0); } });
   const c = document.createElement('div'); c.className = 'scount'; c.textContent = n ? (n + ' 件' + (n > 60 ? '(一部を表示)' : '')) : '見つかりませんでした';
   sres.appendChild(c); if (n) sres.appendChild(ul);
 }

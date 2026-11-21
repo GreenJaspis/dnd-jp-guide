@@ -1,5 +1,5 @@
 <h2>状態(状態・重圧・疲労)</h2>
-<p class="lead">探索者の3つの消耗値、状態(Condition)・重圧(Stress)・疲労(Fatigue)の増え方、減り方、線の位置、運用の原則です。探索だけでなく、依頼・戦乱・腕だめしにも関わります。</p>
+<p class="lead">探索者の3つの消耗値、状態・重圧・疲労の増え方、減り方、線の位置、運用の原則です。探索だけでなく、依頼・戦乱・腕だめしにも関わります。</p>
 
 <details class="legendbox"><summary>タグの見方</summary><div class="legend" data-legend></div></details>
 <p>数値の多くは解析サイト(dungeonsanddynasties.com、ブラウザ版v3.0.2)によるものです。早期アクセス中なので、変わる可能性があります。</p>
@@ -8,12 +8,12 @@
 <div class="tbl"><table>
 <thead><tr><th>値</th><th>中身</th><th>範囲・初期値</th><th>良い方向</th></tr></thead>
 <tbody>
-<tr><td>状態(Condition)</td><td>長期的な体の消耗。戦闘中のHPや負傷とは別。</td><td class="n">0〜100 / 新人85〜100</td><td>高いほど良い</td></tr>
-<tr><td>重圧(Stress)</td><td>心の負担。</td><td class="n">0〜100 / 新人0〜15</td><td>低いほど良い</td></tr>
-<tr><td>疲労(Fatigue)</td><td>体の疲れ。</td><td class="n">0〜100 / 新人0〜10</td><td>低いほど良い</td></tr>
+<tr><td>状態</td><td>長期的な体の消耗。戦闘中のHPや負傷とは別。</td><td class="n">0〜100 / 新人85〜100</td><td>高いほど良い</td></tr>
+<tr><td>重圧</td><td>心の負担。</td><td class="n">0〜100 / 新人0〜15</td><td>低いほど良い</td></tr>
+<tr><td>疲労</td><td>体の疲れ。</td><td class="n">0〜100 / 新人0〜10</td><td>低いほど良い</td></tr>
 </tbody></table></div>
 
-<h3>状態(Condition)</h3>
+<h3>状態</h3>
 <div class="tbl"><table>
 <thead><tr><th>区分</th><th>内容</th><th>値</th></tr></thead>
 <tbody>
@@ -34,7 +34,7 @@
 <p>1日ごとの回復量は資料にありません。</p>
 <div class="note"><b>−10/−20/−45は探索1回あたりの段階</b>と読んでいます(未確認)<span class="tag t-inf">推論</span>。解析サイトの原文は「Every delve costs at least 10; ending a fight below half HP costs 20」で、戦闘ごとなのか探索ごとなのかは書かれていません。ただ、探索1回で6〜8部屋あることも珍しくないので、戦闘ごとに−20だと、半分まで削られる戦闘が3回あれば1回の探索で状態がほぼ尽きてしまいます。プレイ実感とも合わないので、「その探索で一番ひどかった場面で、減る量が決まる」と解釈するのが自然です。<span class="tag t-inf">推論</span></div>
 
-<h3>重圧(Stress)</h3>
+<h3>重圧</h3>
 <div class="tbl"><table>
 <thead><tr><th>区分</th><th>内容</th><th>値</th></tr></thead>
 <tbody>
@@ -43,7 +43,7 @@
 <tr><td>増える</td><td>仲間が倒れる</td><td class="n">+5</td></tr>
 <tr><td>増える</td><td>仕事が悪い結果に終わる</td><td class="n">+14</td></tr>
 <tr><td>増える</td><td>謎解き・罠の失敗</td><td class="n">ひどい罠で最大+30</td></tr>
-<tr><td>増える</td><td>極寒(Deep Cold)のダンジョン</td><td class="n">部屋ごとに+4</td></tr>
+<tr><td>増える</td><td>極寒のダンジョン</td><td class="n">部屋ごとに+4</td></tr>
 <tr><td>増える</td><td>仲間の死</td><td class="n">量は不明(<code>Wall of Names</code> で半減)</td></tr>
 <tr><td>減る</td><td>探索と探索の間</td><td class="n">量は不明</td></tr>
 <tr><td>減る</td><td>訓練の静養</td><td class="n">6日ごとに−14</td></tr>
@@ -57,15 +57,15 @@
 <tr><td>線</td><td>約72超</td><td>自動編成に入らない</td></tr>
 <tr><td>線</td><td>92</td><td>イベント <code>Past Bearing</code> の起点</td></tr>
 </tbody></table></div>
-<p>1日ごとに自然に減るという記述はありません。開発者のブラウザ版時代のコメントでは「静養を使えばかなり速くなり、すり減った探索者でも約2週間で元に戻る。療養室(Infirmary)は全員の回復を速める」とされています。ただし解析サイトでは、療養室で速くなると明記されているのは疲労だけです。</p>
+<p>1日ごとに自然に減るという記述はありません。開発者のブラウザ版時代のコメントでは「静養を使えばかなり速くなり、すり減った探索者でも約2週間で元に戻る。療養室は全員の回復を速める」とされています。ただし解析サイトでは、療養室で速くなると明記されているのは疲労だけです。</p>
 
-<h3>疲労(Fatigue)</h3>
+<h3>疲労</h3>
 <div class="tbl"><table>
 <thead><tr><th>区分</th><th>内容</th><th>値</th></tr></thead>
 <tbody>
 <tr><td>増える</td><td>探索から帰還</td><td class="n">+16</td></tr>
 <tr><td>増える</td><td>長い仕事(依頼など)</td><td class="n">週に約+5</td></tr>
-<tr><td>増減</td><td>持久(Stamina)の能力値</td><td class="n">平均から1点ごとに、探索での疲労が2.5%増減</td></tr>
+<tr><td>増減</td><td>持久の能力値</td><td class="n">平均から1点ごとに、探索での疲労が2.5%増減</td></tr>
 <tr><td>減る</td><td>探索と探索の間</td><td class="n">量は不明。療養室が良いほど速い</td></tr>
 <tr><td>減る</td><td>訓練の静養</td><td class="n">6日ごとに−12</td></tr>
 <tr><td>減る</td><td>4日間の休暇</td><td class="n">−30</td></tr>
@@ -87,7 +87,7 @@
 <tr><td>本当に出せなくなるとき</td><td>負傷(独自の日数カウント)と、別の仕事で不在のときだけです。</td></tr>
 <tr><td>依頼への影響</td><td>疲弊していると、依頼の成功率が7%下がります。</td></tr>
 <tr><td>線より手前</td><td>線を越えるまでは、戦闘能力が下がるという記述は資料にありません。</td></tr>
-<tr><td>士気(Morale)</td><td>戦闘力には影響しません。別の管理値です。</td></tr>
+<tr><td>士気</td><td>戦闘力には影響しません。別の管理値です。</td></tr>
 </tbody></table></div>
 
 <h3>回復手段の比較</h3>
@@ -163,18 +163,18 @@
 <li>医師は回復を速め、死亡も和らげます。医師を戦乱に送ると、その間は家での回復が通常速度に戻ります(0.224)。</li>
 <li>療養室の専門化 <code>Surgeons' Ward</code> では、死ぬはずだった4人に1人が重傷で生還します。</li>
 <li>熟練が高いほど、倒れたときに致命傷になりにくくなります。</li>
-<li>取り決め「不死」(<code>Undying</code>)では、致命傷が重傷で済みます。</li>
+<li>取り決め「不死」では、致命傷が重傷で済みます。</li>
 </ul>
 
 <h4>弱点の克服</h4>
-<p>熟練が道慣れ(Roadwise)か歴戦(Grizzled)になったとき、弱点の特性を持つ探索者が、その原因になっている能力値を14まで上げていると、弱点を克服して反対の特性を得ることがあります(0.304)。克服すると日誌と The Chronicle に記録されます。</p>
+<p>熟練が道慣れか歴戦になったとき、弱点の特性を持つ探索者が、その原因になっている能力値を14まで上げていると、弱点を克服して反対の特性を得ることがあります(0.304)。克服すると日誌と The Chronicle に記録されます。</p>
 <div class="tbl"><table>
 <thead><tr><th>弱点</th><th>克服後</th></tr></thead>
 <tbody>
-<tr><td><code>Glass-Jawed</code> / 虚弱(<code>Frail</code>)</td><td><code>Hardy</code></td></tr>
-<tr><td><code>Slow to Mend</code></td><td><code>Quick to Mend</code></td></tr>
-<tr><td><code>Clumsy</code></td><td><code>Sure-Footed</code></td></tr>
-<tr><td><code>Light Sleeper</code></td><td><code>Early Riser</code></td></tr>
+<tr><td>打たれ弱い / 虚弱</td><td>頑健</td></tr>
+<tr><td>治りが遅い</td><td>治りが早い</td></tr>
+<tr><td>不器用</td><td>足取り確か</td></tr>
+<tr><td>眠りが浅い</td><td>早起き</td></tr>
 </tbody></table></div>
 
 <h4>負傷と病気のイベント</h4>
