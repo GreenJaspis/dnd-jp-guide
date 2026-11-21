@@ -25,10 +25,11 @@ npm run preview    # ビルドして http://localhost:8080 で確認
 
 ビルドすると、本文の `href="#ページid"` や `href="#見出しid"` は自動で正しい URL に書き換わります。リンク先が見つからないときや id が重複しているときは、ビルドの最後に「注意」として表示されます。
 
-## 公開(Cloudflare Pages)
+## 公開(Cloudflare Workers)
 
-- ビルドコマンド: `npm run build`
-- 出力ディレクトリ: `dist`
+https://dnd-jp-guide.arkelboot.workers.dev
+
+main に push すると、Cloudflare が `npm run build` → `npx wrangler deploy` を実行して公開する。公開の設定(出力先 `dist`、見つからないページは 404.html)は `wrangler.jsonc` にある。
 
 ## 設定(site.config.json)
 
