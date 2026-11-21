@@ -1,0 +1,58 @@
+<h2>特性</h2>
+<p class="lead">探索者が持つ特性(全<span id="trcount">111</span>種)と、依頼・探索・イベントとの相性の一覧です。</p>
+
+<h3>表の読み方</h3>
+<ul>
+<li><b>○</b>=有利・得意、<b>✕</b>=不利・苦手、<b>△</b>=条件付き(良い面と悪い面がある、特定の状況だけなど)。</li>
+<li><b>依頼の4列</b>(懸賞・傭兵・装備狩り・遠征)は、解析サイトの依頼ガイドにある「好む特性/嫌う特性」の表がもとです。好む特性は1つにつき適性+5%、嫌う特性は−6%です。ただし「交渉上手」(報酬×1.1)と「一族の誇り」(一族のいる地域で+12%)は、各特性ページの説明から付けています。</li>
+<li><b>それ以外の列</b>(探索・イベント・役割)は、各特性ページの説明から私が○✕△を割り当てたものです。<span class="tag t-inf">推論</span></li>
+<li>行をタップすると、効果の要約が開きます。</li>
+<li>特性の日本語名と説明は、ゲーム内の特性一覧で確認したものです。<span class="tag t-ok">画面で確認</span> ゲームは特性を<b>美徳・癖・欠点</b>の3つに分け、希少さ(伝説・希少・並外れ・並)を付けています。行を開くと、ゲーム内の説明と資料の要約が両方出ます。資料の要約のうち、ゲーム内の説明と食い違う点は〔旧版の資料では〜〕として残し、ゲーム内の説明に出てこない効果には「(画面の説明にはない)」と書いています。</li>
+<li>ゲームの一覧では「不屈」という名前の美徳が2つあります(英語版の <code>Dauntless</code> と <code>Indomitable</code>)。表では両方「不屈」と表示しています。</li>
+<li>美徳のうち「伝説」「希少」のものは、創設時の選抜で必ず1枚がその希少さの美徳を帯びる、と説明されています。</li>
+<li>依頼名の「懸賞(Bounty)」「傭兵(Sellsword)」「装備狩り(Gear Hunt)」は v0.304 の画面で確認した表記です。「遠征(Expedition)」は掲示板の季節の一言で確認しました。</li>
+</ul>
+
+<div class="gtools">
+  <label for="tq" class="count">特性名で検索(日本語・英語)</label>
+  <input id="tq" type="search" placeholder="例: 勇敢、Lucky" autocomplete="off">
+  <label for="tcol" class="count">列で絞り込む</label>
+  <select id="tcol" class="tsel"></select>
+  <div class="chips" id="tmode" role="group" aria-label="印の種類">
+    <button type="button" data-m="any" aria-pressed="true">○✕△すべて</button>
+    <button type="button" data-m="o" aria-pressed="false">○だけ</button>
+    <button type="button" data-m="x" aria-pressed="false">✕だけ</button>
+  </div>
+  <div class="chips" id="tpol" role="group" aria-label="傾向">
+    <button type="button" data-p="all" aria-pressed="true">全部</button>
+    <button type="button" data-p="美徳" aria-pressed="false">美徳</button>
+    <button type="button" data-p="癖" aria-pressed="false">癖</button>
+    <button type="button" data-p="欠点" aria-pressed="false">欠点</button>
+    <button type="button" data-p="race" aria-pressed="false">種族限定</button>
+  </div>
+  <div class="count" id="tcount" aria-live="polite"></div>
+</div>
+<div class="tbl ttbl"><table id="ttable"><thead></thead><tbody></tbody></table></div>
+
+<h3>依頼の適性の仕組み</h3>
+<p>依頼の成否は、探索者の「適性」で変わります。探索者1人ずつにボーナスを合計し(−18%〜+22%で頭打ち)、パーティーの平均を使います。</p>
+<div class="tbl"><table>
+<thead><tr><th>要素</th><th>適性</th></tr></thead>
+<tbody>
+<tr><td>依頼が求める役割を持っている</td><td class="n">+8%</td></tr>
+<tr><td>その地域に一族がいる</td><td class="n">+6%(一族の誇りなら2倍)</td></tr>
+<tr><td>その地域に誓い(Vow)を立てている</td><td class="n">+5%</td></tr>
+<tr><td>引き抜いた探索者を傭兵の依頼に出す</td><td class="n">+5%</td></tr>
+<tr><td>好む特性1つにつき</td><td class="n">+5%</td></tr>
+<tr><td>嫌う特性1つにつき</td><td class="n">−6%</td></tr>
+<tr><td>疲弊している</td><td class="n">−7%</td></tr>
+</tbody></table></div>
+<p>詳しくは<a href="#quests">依頼種別と関連する資質</a>を参照してください。</p>
+
+<h3>選び方の原則 <span class="tag t-inf">推論</span></h3>
+<ul>
+<li><b>戦闘系の特性は役割で判断する</b>: 勇気や敵対心を上げる特性は盾向きで、癒し手には害になります。止めを狙う特性は攻撃役向き、仲間をかばう特性は癒し手と盾向きです。同じ特性でも、付いた探索者の役割で良し悪しが逆になります。</li>
+<li><b>依頼要員は特性でそろえる</b>: 好む特性が2つあれば+10%、嫌う特性が2つあれば−12%です。依頼の種類ごとに向く探索者を決めておくと、成功率が安定します。</li>
+<li><b>リーダーの特性に注意</b>: 休憩を飛ばす特性の探索者がパーティーで一番統率が高いと、75%で休憩部屋を素通りして、全員の重圧が+5されます。ゲーム内の説明で確認できるのは野心・落ち着きなし・疲れ知らずの3つです。<span class="tag t-ok">画面で確認</span> 無謀・短気・功名狙い・傲慢・強欲は資料にだけ書かれていて、ゲーム内の説明には出てきません。序盤は特に避けたい組み合わせです。</li>
+<li><b>契約の特性は長期で効く</b>: 誓いに縛られた(×0.62)、忠実(×0.88)、倹約家(×0.9)は、長く抱える主力ほど得になります。</li>
+</ul>

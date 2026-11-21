@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<link rel="icon" href="data:,">
+{{head}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho+B1:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v={{version}}">
+</head>
+<body data-page="{{id}}">
+<header>
+  <div class="wrap">
+    <h1><a href="/" class="home">Dungeons &amp; Dynasties 日本語攻略</a></h1>
+    <p class="sub">ギルド経営シミュレーション「Dungeons &amp; Dynasties」(Steam早期アクセス)の非公式攻略メモ</p>
+    <div class="ver"><span>対象: <b>Steam版 Patch 0.304</b>(2026/11/17)前後</span><span>最終更新: 2026/11/21</span><span><a href="/about/">出典と注意</a></span></div>
+    <div class="sbox" role="search"><label for="sq" class="vh">サイト内検索</label><input id="sq" type="search" placeholder="サイト内検索(本文・用語集・特性)" autocomplete="off"><div id="sres" aria-live="polite"></div></div>
+  </div>
+</header>
+<nav aria-label="章"><div class="wrap" id="chapnav">{{chapnav}}</div></nav>
+<main class="wrap">
+<section id="{{id}}">
+{{content}}
+</section>
+</main>
+<footer><div class="wrap">非公式の攻略メモです。ゲームの権利は開発者 Bretticus82 / Surefire.Games に帰属します。</div></footer>
+<script src="/assets/site.js?v={{version}}" defer></script>
+</body>
+</html>

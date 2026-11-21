@@ -1,0 +1,15 @@
+{
+  "siteName": "Dungeons & Dynasties 日本語攻略",
+  "siteUrl": "",
+  "indexable": false,
+  "feedback": {
+    "formUrl": "",
+    "pageEntry": ""
+  },
+  "giscus": {
+    "repo": "GreenJaspis/dnd-jp-guide",
+    "repoId": "",
+    "category": "",
+    "categoryId": ""
+  }
+}
