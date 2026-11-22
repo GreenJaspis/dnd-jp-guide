@@ -35,7 +35,7 @@ export const PAGES = [
   {id:'dungeon', ch:'delve', t:'ダンジョンと状態', d:'部屋、悪条件、危険度、報酬'},
   {id:'league', ch:'event', t:'リーグ戦・試練・昇格', d:'リーグの仕組み、昇格、Crucible'},
   {id:'war', ch:'event', t:'戦乱', d:'出陣の画面、配置、結果、戦乱に効く要素'},
-  {id:'cup', ch:'event', t:'大会', d:'カップ戦、Open', prep:1},
+  {id:'cup', ch:'event', t:'大会', d:'公開大会(地方ごとの勝ち抜き戦)', prep:1},
   {id:'gatherings', ch:'event', t:'腕だめし', d:'集い(最後の灯・大狩り・土俵)と試しの日', prep:1},
   {id:'deep', ch:'event', t:'深淵', d:'1〜2年目から開く巨大ダンジョン', prep:1},
   {id:'quests', ch:'quest', t:'依頼種別と関連する資質', d:'依頼の種類、成否と報酬の計算、適性の補正'},
