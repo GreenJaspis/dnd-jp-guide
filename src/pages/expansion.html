@@ -1,5 +1,5 @@
 <h2>ギルドの拡張</h2>
-<p class="lead">ギルドハウス、施設、名声による制限、最上位レベルの専門化です。</p>
+<p class="lead">ギルドハウス、施設、名声による制限、最上位レベルの特化です。</p>
 
 <h3>ギルドハウスと名声</h3>
 <ul>
@@ -32,22 +32,31 @@
 <li>建てた施設は「壊す」で一部のお金が戻り、維持費が減ります。特化した施設は「取り払う」になります。</li>
 <li>画面の施設の説明: 酒場棟は「段階ごとに新人の掲示板に並ぶ名が増える」。武具庫は「保管料なしで置ける装備が増え、売値が上がり、鍛冶場が開く」。薬膳房は「なければ、探索は食べるものも醸すものも持ち帰らない」。</li>
 </ul>
-<h3>施設の専門化(最上位レベル)</h3>
-<p>各施設は最上位で2択の専門化があります。どちらを選ぶかは、ギルドの方針次第です。</p>
+<h3>施設の特化(最上位レベル)</h3>
+<p>各施設は最上位で2択の特化があります(画面では「特化済み」)。どちらを選ぶかは、ギルドの方針次第です。下の表の「画面で見た特化」は、5年目のギルドで選んであった側の名前と説明です。もう一方は資料によるもので、日本語名はわかっていません。</p>
 <div class="tbl"><table>
-<thead><tr><th>施設</th><th>専門化A</th><th>専門化B</th></tr></thead>
+<thead><tr><th>施設</th><th>画面で見た特化 <span class="tag t-ok">画面で確認</span></th><th>もう一方(資料)</th></tr></thead>
 <tbody>
-<tr><td>酒場棟</td><td><code>Stables</code>: 依頼などの移動25%短縮</td><td><code>Inn</code>: ベッド+2</td></tr>
-<tr><td>療養室</td><td><code>Surgeons' Ward</code>: 死ぬはずの4人に1人が重傷で生還</td><td><code>Long Ward</code>: 傷の治りが最大3倍速</td></tr>
-<tr><td>訓練場</td><td><code>Sparring Ring</code>: 訓練枠10</td><td><code>Master's Yard</code>(師範の庭<span class="tag t-ok">画面で確認</span>): 席での研鑽と鍛錬が通常の1.45倍から1.7倍に</td></tr>
-<tr><td>武具庫</td><td><code>Master Forge</code>: 5日で良い装備</td><td><code>Quartermaster's Store</code>: 棚+16、売値+10%</td></tr>
-<tr><td>石舎(Stonehouse)</td><td><code>Deep Lore</code>: 採用の引き+50%</td><td><code>Wall of Names</code>: 仲間の死による士気・重圧への影響が半分</td></tr>
-<tr><td>篝火塔(Beacon)</td><td><code>War Horn</code>: 戦乱の名声+50%</td><td><code>Muster Roll</code>: 戦乱の報酬+50%</td></tr>
-<tr><td>計理館</td><td><code>The Vault</code>: 準備金+50%、利息+0.5</td><td><code>Letters of Credit</code>: 改築15%安、借金猶予+2回</td></tr>
-<tr><td>薬膳房</td><td><code>Great Larder</code>: 出撃コスト−48%</td><td><code>The Stall</code>(詳細未確認)</td></tr>
-<tr><td>学舎</td><td><code>More Berths</code>(枠の増設<span class="tag t-ok">画面で確認</span>): 志願者の枠が毎年2つ増える</td><td><code>Bloodlines</code>: 天才児の出現率上昇</td></tr>
+<tr><td style="white-space:nowrap">酒場棟</td><td><b>宿屋</b>: 身内のための部屋。館の寝台が2つ増える。余った部屋は旅人に貸し、給金日ごとに少しの金が入る(町が大きいほど多い)。</td><td><code>Stables</code>: 依頼などの移動25%短縮</td></tr>
+<tr><td style="white-space:nowrap">療養室</td><td><b>長期療養室</b>: 長い療養のための寝台。傷のふさがる速さは最大で3倍(なければ2.5倍)、疲労も早く抜ける。包帯は闇の中にも持ち込まれ、死ぬはずだった探索者のおよそ7人に1人が、癒える傷を負って生きて帰る。</td><td><code>Surgeons' Ward</code>: 死ぬはずの4人に1人が重傷で生還</td></tr>
+<tr><td style="white-space:nowrap">訓練場</td><td><b>師範の庭</b>: 席での研鑽と訓練が速まる。通常の1.45倍から1.7倍になる。</td><td><code>Sparring Ring</code>: 訓練枠10</td></tr>
+<tr><td style="white-space:nowrap">武具庫</td><td><b>武具方の蔵</b>: 保管料なしで置ける品が16増え、装備の売値が価値の10%ぶん上がる。</td><td><code>Master Forge</code>: 5日で良い装備</td></tr>
+<tr><td style="white-space:nowrap">石舎</td><td><b>深き伝承</b>: 石がより深く読まれる。酒場の掲示板に誰が来るかを左右する石の引き寄せが50%強まる。</td><td><code>Wall of Names</code>: 仲間の死による士気・重圧への影響が半分</td></tr>
+<tr><td style="white-space:nowrap">篝火塔</td><td><b>戦の角笛</b>: 召集に応じて出陣すると、得る名声が25%増える。〔旧版の資料では+50%〕</td><td><code>Muster Roll</code>: 戦乱の報酬+50%</td></tr>
+<tr><td style="white-space:nowrap">計理館</td><td><b>大金庫</b>: 積立金を50%多く蓄えられ、給金日ごとの利率が0.5%上がる。</td><td><code>Letters of Credit</code>: 改築15%安、借金猶予+2回</td></tr>
+<tr><td style="white-space:nowrap">薬膳房</td><td><b>大食糧庫</b>: 棚に44ではなく60を収め、糧食が探索の一党にかける負担(疲労・重圧)を36%ではなく48%減らす。〔旧版の資料では「出撃コスト−48%」〕</td><td><code>The Stall</code>(詳細未確認)</td></tr>
+<tr><td style="white-space:nowrap">学舎</td><td><b>枠の増設</b>: 毎年、志願者の枠が2つ増える。</td><td><code>Bloodlines</code>: 天才児の出現率上昇</td></tr>
 </tbody></table></div>
+<p>特化した施設は「取り払う」でお金が戻り、維持費が減ります。画面の例では、どの特化済みの施設も「取り払う・+720G、−21G/6日」(計理館は維持費がなく +720G のみ)、最大まで拡げた館は「壊す・+2,000G、−21G/6日」でした。<span class="tag t-ok">画面で確認</span></p>
 
-
-<h3>最後の建設計画(The Last Work)</h3>
-<p>ギルドハウスとすべての施設を建て終えると、最後の建設計画が1つ解禁されます(例: <code>The Masters' Chair</code>、<code>The Deep Cellar</code>)。</p>
+<h3>最後の仕事</h3>
+<p>館とすべての棟を建て終えると、「最後の仕事」を一つだけ選べます。画面の説明は「どの棟も館も、すべて建ち上がった。最後の仕事を一つ、一巻につき一度だけ行える。取り消しはできない」。<span class="tag t-ok">画面で確認</span></p>
+<div class="tbl"><table>
+<thead><tr><th>最後の仕事</th><th>画面の説明</th></tr></thead>
+<tbody>
+<tr><td>長い寝所</td><td>館の大きさが許す以上に、さらに三人の探索者を置ける。</td></tr>
+<tr><td>師範の座</td><td>学舎の見習いは、館にいる探索者の四倍の速さで育つ(これまでは三と四分の一倍)。入門のたびに世代の才が現れる確率が2%上がる。</td></tr>
+<tr><td>鍛えの場</td><td>訓練場全体を1.15倍にする。棟、教官、ギルドマスターの効果に上乗せして、鍛錬と研鑽が15%速くなる。</td></tr>
+<tr><td>深い貯蔵庫</td><td>棚の蓄えが二十増え、糧を得た一行は探索の疲労と重圧をさらに6%免れる。</td></tr>
+</tbody></table></div>
+<p>最大まで拡げた館の説明は「探索者29人分の寝床」でした。<span class="tag t-ok">画面で確認</span> ベッドの式の上限24に、宿屋の+2と長い寝所の+3を足すと29になり、数が合います。<span class="tag t-inf">推論</span></p>
