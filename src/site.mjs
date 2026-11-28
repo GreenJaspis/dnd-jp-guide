@@ -24,7 +24,7 @@ export const PAGES = [
   {id:'recruit', ch:'basic', t:'採用と契約', d:'酒場・探索者市場、先天的な才、ライバルからの引き抜き、誓約(Oath)'},
   {id:'growth', ch:'basic', t:'育成', d:'訓練、熟練、誓い(Vow)、学舎の設定'},
   {id:'raising', ch:'basic', t:'育成の考え方', d:'誰を育てるか、鍛錬と研鑽、師匠の選び方、熟練、衰えと引き際'},
-  {id:'traits', ch:'basic', t:'特性', d:'111種の特性と、依頼・探索・イベントとの相性表'},
+  {id:'traits', ch:'basic', t:'特性', d:'特性(0.304時点の111種)と、依頼・探索・イベントとの相性表'},
   {id:'state', ch:'basic', t:'状態', d:'状態・重圧・疲労の増減と線、回復手段、負傷・後遺症・病気'},
   {id:'management', ch:'basic', t:'経営', d:'お金の流れ、借金、職員'},
   {id:'expansion', ch:'basic', t:'ギルドの拡張', d:'ギルドハウスと名声、施設、専門化'},
