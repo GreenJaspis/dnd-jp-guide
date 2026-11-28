@@ -20,11 +20,17 @@ const byId = Object.fromEntries(PAGES.map(p => [p.id, p]));
 const warnings = [];
 
 // ---- 本文の <...> を注記タグにする(用語集の書き方)
+// タグの名前と色(class)。凡例(トップ)と同じ対応にしておく。
+const TAGCLS = [['単一出典', 't-single'], ['プレイ報告', 't-play'], ['情報割れ', 't-conf'], ['解釈割れ', 't-interp'],
+  ['推論', 't-inf'], ['仮訳', 't-tr'], ['準備中', 't-prep'], ['画面で確認', 't-ok'], ['表記確認済', 't-name'],
+  ['セーブで確認', 't-save'], ['旧版の画面', 't-old']];
+const tagClass = name => (TAGCLS.find(([k]) => name.startsWith(k)) || [null, 't-tr'])[1];
+// 用語集・特性の説明文の中の <タグ名> をタグの表示にする(いくつあってもよい)
 function tagify(text) {
-  const m = String(text).match(/^(.*?)<(.+)>(.*)$/s);
-  if (!m) return esc(text);
-  const cls = m[2].startsWith('情報割れ') ? 't-conf' : m[2].startsWith('単一') ? 't-single' : 't-tr';
-  return esc(m[1]) + `<span class="tag ${cls}">${esc(m[2])}</span>` + esc(m[3]);
+  return String(text).split(/(<[^<>]+>)/).map(s => {
+    const m = s.match(/^<([^<>]+)>$/);
+    return m ? `<span class="tag ${tagClass(m[1])}">${esc(m[1])}</span>` : esc(s);
+  }).join('');
 }
 const plain = s => String(s).replace(/[<>]/g, '');
 
@@ -78,7 +84,7 @@ function subnav(p) {
   if (sib.length < 2) return '';
   const name = CH.find(c => c.id === p.ch).name;
   return `<div class="subnav"><span class="sublab">${esc(name)}</span>` +
-    sib.map(q => `<a href="${url(q.id)}"${q.id === p.id ? ' aria-current="page"' : ''}>${esc(q.t)}</a>`).join('') + '</div>';
+    sib.map(q => `<a href="${url(q.id)}"${q.prep ? ' class="prep"' : ''}${q.id === p.id ? ' aria-current="page"' : ''}>${esc(q.t)}</a>`).join('') + '</div>';
 }
 
 function pager(p) {
@@ -142,7 +148,7 @@ function topMenu($) {
   const html = CH.filter(c => c.id !== 'top').map(c => {
     const lis = PAGES.filter(p => p.ch === c.id).map(p =>
       `<li><a href="${url(p.id)}">${esc(p.t)}</a>` +
-      (p.prep ? '<span class="tag t-tr">準備中</span>' : '') +
+      (p.prep ? '<span class="tag t-prep">準備中</span>' : '') +
       (p.d ? `<span class="md">${esc(desc(p))}</span>` : '') + '</li>').join('');
     return `<div class="mcard"><h3>${esc(c.name)}</h3><ul>${lis}</ul></div>`;
   }).join('');
@@ -159,7 +165,7 @@ function glossary($) {
     html += `<h3 class="gcat" data-cat="${k}">${esc(CATS[k])}</h3>`;
     for (const g of items) {
       html += `<div class="entry" data-cat="${k}"><div class="hd"><span class="ja">${esc(g[2])}</span>` +
-        (g[3] ? '<span class="tag t-ok">表記確認済</span>' : '<span class="tag t-tr">仮訳</span>') +
+        (g[3] ? '<span class="tag t-name">表記確認済</span>' : '<span class="tag t-tr">仮訳</span>') +
         `<span class="en">${esc(g[1])}</span></div><p class="desc">${tagify(g[4])}</p>` +
         (g[5] && g[5] !== '—' ? `<p class="who"><b>効く対象: </b>${tagify(g[5])}</p>` : '') + '</div>';
     }

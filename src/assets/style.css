@@ -2,6 +2,7 @@
   /* 帳簿(ledger)の見開き: 青灰の紙、墨、深緑のインク、真鍮の注記 */
   --paper:#f3f4f1; --sheet:#ffffff; --ink:#1c2330; --muted:#5b6472;
   --accent:#0d6466; --brass:#8f6410; --line:#d9dcd6; --warn:#a33a2a; --ok:#2f6b3a; --old:#7a52b8;
+  --play:#9a3f6e; --save:#2b5b8f; --name:#4d6a1f; --interp:#b3541e;
   --display:"Shippori Mincho B1","Hiragino Mincho ProN",serif;
   --body:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
   color-scheme:light;
@@ -10,12 +11,14 @@
   :root:not([data-theme="light"]){
     --paper:#14181e; --sheet:#1b2028; --ink:#e4e7ea; --muted:#9aa3ae;
     --accent:#4fb3ad; --brass:#d1a54a; --line:#2c333d; --warn:#e07a66; --ok:#7cc48a; --old:#b9a0ec;
+    --play:#e59ac0; --save:#8db8ea; --name:#b5d27a; --interp:#f0a070;
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
   --paper:#14181e; --sheet:#1b2028; --ink:#e4e7ea; --muted:#9aa3ae;
   --accent:#4fb3ad; --brass:#d1a54a; --line:#2c333d; --warn:#e07a66; --ok:#7cc48a; --old:#b9a0ec;
+  --play:#e59ac0; --save:#8db8ea; --name:#b5d27a; --interp:#f0a070;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -51,6 +54,13 @@ li{margin:3px 0}
 .t-ok{color:var(--ok)}
 .t-old{color:var(--old)}
 .t-inf{color:var(--accent)}
+.t-play{color:var(--play)}
+.t-save{color:var(--save)}
+.t-name{color:var(--name)}
+.t-interp{color:var(--interp)}
+.t-prep{color:var(--muted);border-style:dashed}
+.subnav a.prep{border-style:dashed;color:var(--muted)}
+.subnav a.prep::after{content:"準備中";font-size:.7rem;margin-left:4px}
 code,.en{font-family:ui-monospace,"SFMono-Regular",Menlo,monospace;font-size:.86em;background:color-mix(in srgb,var(--accent) 10%,transparent);padding:0 4px;border-radius:3px}
 .tbl{overflow-x:auto;margin:8px 0 14px}
 table{border-collapse:collapse;width:100%;min-width:0;font-size:.9rem;background:var(--sheet)}

@@ -34,7 +34,7 @@ export const PAGES = [
   {id:'formation', ch:'delve', t:'隊形', d:'配置の原則と、攻略記事の隊形'},
   {id:'orders', ch:'delve', t:'戦術(ガンビット)', d:'戦闘中の行動ルール。中級者向け'},
   {id:'dungeon', ch:'delve', t:'ダンジョンと状態', d:'部屋、悪条件、危険度、報酬'},
-  {id:'league', ch:'event', t:'リーグ戦・試練・昇格', d:'リーグの仕組み、昇格、Crucible'},
+  {id:'league', ch:'event', t:'リーグ戦・試練・昇格', d:'リーグの仕組み、昇格、坩堝'},
   {id:'war', ch:'event', t:'戦乱', d:'出陣の画面、配置、結果、戦乱に効く要素'},
   {id:'cup', ch:'event', t:'大会', d:'公開大会(地方ごとの勝ち抜き戦)', prep:1},
   {id:'gatherings', ch:'event', t:'腕だめし', d:'集い(最後の灯・大狩り・土俵)と試しの日', prep:1},
