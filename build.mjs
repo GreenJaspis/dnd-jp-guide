@@ -186,13 +186,32 @@ function traits($) {
   const parse = m => Object.fromEntries((m || '').split(' ').filter(Boolean).map(x => x.split(':')));
   $('#ttable tbody').html(TR.map(r => {
     const m = parse(r[3]);
-    const det = '【' + r[6] + '・' + r[7] + '】' + r[8] + (r[9] ? '(関連する能力値: ' + r[9] + ')' : '') + ' ／ 資料の要約: ' + r[4];
+    const det = '【' + r[6] + '・' + r[7] + '】' + r[8] + (r[9] ? '(関連する能力値: ' + r[9] + ')' : '') + ' ／ DWIKI の要約: ' + r[4];
     return `<tr class="row" tabindex="0" aria-expanded="false" data-en="${esc(r[0])}" data-ja="${esc(r[1])}" data-pol="${esc(r[6])}" data-race="${r[5] ? 1 : 0}" data-m="${esc(r[3])}">` +
       `<td class="nm"><b>${esc(r[1])}</b></td>` +
       TCOLS.map(c => { const v = m[c[0]]; return v ? `<td class="m${v}">${SYM[v]}</td>` : '<td></td>'; }).join('') +
       `</tr><tr class="det" hidden><td colspan="${TCOLS.length + 1}"><div class="detin">${esc(det)}</div></td></tr>`;
   }).join(''));
   $('#tcount').text(TR.length + ' 件');
+}
+
+// ---- 本文の出典の略称(STORE・PATCH・CNOTE・外部攻略記事・DWIKI・ITCH)を、出典と注意ページの該当の節へのリンクにする
+const SRCLINK = {STORE: 'src-store', PATCH: 'src-patch', CNOTE: 'src-cnote', '外部攻略記事': 'src-ext', DWIKI: 'src-dwiki', ITCH: 'src-itch'};
+const SRCRE = /(?<![A-Za-z])(STORE|PATCH|CNOTE|DWIKI|ITCH)(?![A-Za-z])|外部攻略記事/g;
+function srcLinks($) {
+  const skip = new Set(['a', 'code', 'script', 'style', 'h1', 'h2', 'h3', 'h4', 'title', 'button', 'option']);
+  const walk = el => {
+    for (const n of [...(el.children || [])]) {
+      if (n.type === 'text') {
+        const s = n.data;
+        if (!SRCRE.test(s)) { SRCRE.lastIndex = 0; continue; }
+        SRCRE.lastIndex = 0;
+        const html = esc(s).replace(SRCRE, m => `<a class="src" href="${url('about')}#${SRCLINK[m]}">${m}</a>`);
+        $(n).replaceWith(html);
+      } else if (n.type === 'tag' && !skip.has(n.name)) walk(n);
+    }
+  };
+  walk($.root()[0]);
 }
 
 const desc = p => (p.d || '').replace('{G}', String(G.length));
@@ -241,6 +260,7 @@ for (const {p, $} of pages) {
   if (p.id === 'top') topMenu($);
   if (p.id === 'glossary') glossary($);
   if (p.id === 'traits') traits($);
+  if (p.id !== 'about') srcLinks($);
   if (p.id !== 'top') { $.root().prepend(subnav(p)); $.root().append(feedback(p) + pager(p)); }
   const dir = path.join(OUT, p.id === 'top' ? '' : p.id);
   fs.mkdirSync(dir, {recursive: true});

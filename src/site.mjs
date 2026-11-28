@@ -31,7 +31,7 @@ export const PAGES = [
   {id:'gear', ch:'basic', t:'装備', d:'武具庫の画面、品格と等級、武具方の棚と特注'},
   {id:'records', ch:'basic', t:'記録と物語', d:'栄誉、年代記、討たれた伝説', prep:1},
   {id:'odds', ch:'delve', t:'勝率', d:'勝率予想の読み方。探索攻略の物差し'},
-  {id:'formation', ch:'delve', t:'隊形', d:'配置の原則と、攻略記事の隊形'},
+  {id:'formation', ch:'delve', t:'隊形', d:'配置の原則と、CNOTE の隊形'},
   {id:'orders', ch:'delve', t:'戦術(ガンビット)', d:'戦闘中の指示の組み合わせ。中級者向け'},
   {id:'dungeon', ch:'delve', t:'ダンジョンと状態', d:'部屋、悪条件、危険度、報酬'},
   {id:'league', ch:'event', t:'リーグ戦・試練・昇格', d:'リーグの仕組み、昇格、坩堝'},
