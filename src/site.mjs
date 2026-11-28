@@ -37,7 +37,7 @@ export const PAGES = [
   {id:'league', ch:'event', t:'リーグ戦・試練・昇格', d:'リーグの仕組み、昇格、坩堝'},
   {id:'war', ch:'event', t:'戦乱', d:'出陣の画面、配置、結果、戦乱に効く要素'},
   {id:'cup', ch:'event', t:'大会', d:'公開大会(地方ごとの勝ち抜き戦)', prep:1},
-  {id:'gatherings', ch:'event', t:'集い', d:'年3回の集いと、見習いの試しの日', prep:1},
+  {id:'gatherings', ch:'event', t:'集い', d:'年3回の集い', prep:1},
   {id:'deep', ch:'event', t:'深淵', d:'1〜2年目から開く巨大ダンジョン', prep:1},
   {id:'quests', ch:'quest', t:'依頼種別と関連する資質', d:'依頼の種類、成否と報酬の計算、適性の補正'},
   {id:'town', ch:'quest', t:'町の依頼', d:'故郷の普請で出る、町の仕事と資材の依頼'},
