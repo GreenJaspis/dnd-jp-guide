@@ -186,7 +186,7 @@ function traits($) {
   const parse = m => Object.fromEntries((m || '').split(' ').filter(Boolean).map(x => x.split(':')));
   $('#ttable tbody').html(TR.map(r => {
     const m = parse(r[3]);
-    const det = '【' + r[6] + '・' + r[7] + '】' + r[8] + (r[9] ? '(関連する能力値: ' + r[9] + ')' : '') + ' ／ DWIKI の要約: ' + r[4];
+    const det = '【' + r[6] + '・' + r[7] + '】' + r[8] + (r[9] ? '(関連する能力値: ' + r[9] + ')' : '') + ' ／ DWIKI 0.305 の要約: ' + r[4];
     return `<tr class="row" tabindex="0" aria-expanded="false" data-en="${esc(r[0])}" data-ja="${esc(r[1])}" data-pol="${esc(r[6])}" data-race="${r[5] ? 1 : 0}" data-m="${esc(r[3])}">` +
       `<td class="nm"><b>${esc(r[1])}</b></td>` +
       TCOLS.map(c => { const v = m[c[0]]; return v ? `<td class="m${v}">${SYM[v]}</td>` : '<td></td>'; }).join('') +
