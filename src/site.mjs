@@ -38,7 +38,7 @@ export const PAGES = [
   {id:'war', ch:'event', t:'戦乱', d:'出陣の画面、配置、結果、戦乱に効く要素'},
   {id:'cup', ch:'event', t:'大会', d:'公開大会(地方ごとの勝ち抜き戦)', prep:1},
   {id:'gatherings', ch:'event', t:'集い', d:'年3回の集い', prep:1},
-  {id:'deep', ch:'event', t:'深淵', d:'1〜2年目から開く巨大ダンジョン', prep:1},
+  {id:'deep', ch:'event', t:'深淵', d:'1年目の深冬から毎年1階層ずつ開く巨大ダンジョン', prep:1},
   {id:'quests', ch:'quest', t:'依頼種別と関連する資質', d:'依頼の種類、成否と報酬の計算、適性の補正'},
   {id:'town', ch:'quest', t:'町の依頼', d:'故郷の普請で出る、町の仕事と資材の依頼'},
   {id:'stillroom', ch:'quest', t:'薬膳房の依頼', d:'自分で出して自分で受け、在庫を増やす依頼', prep:1},
