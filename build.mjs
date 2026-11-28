@@ -186,7 +186,7 @@ function traits($) {
   const parse = m => Object.fromEntries((m || '').split(' ').filter(Boolean).map(x => x.split(':')));
   $('#ttable tbody').html(TR.map(r => {
     const m = parse(r[3]);
-    const det = '【' + r[6] + '・' + r[7] + '】' + r[8] + (r[9] ? '(関連する能力値: ' + r[9] + ')' : '') + ' ／ DWIKI 0.305 の要約: ' + r[4];
+    const det = '【' + r[6] + '・' + r[7] + '】' + r[8] + (r[9] ? '(関連する能力値: ' + r[9] + ')' : '');
     return `<tr class="row" tabindex="0" aria-expanded="false" data-en="${esc(r[0])}" data-ja="${esc(r[1])}" data-pol="${esc(r[6])}" data-race="${r[5] ? 1 : 0}" data-m="${esc(r[3])}">` +
       `<td class="nm"><b>${esc(r[1])}</b></td>` +
       TCOLS.map(c => { const v = m[c[0]]; return v ? `<td class="m${v}">${SYM[v]}</td>` : '<td></td>'; }).join('') +
@@ -275,7 +275,7 @@ fs.writeFileSync(path.join(OUT, '404.html'), render({id: 'notfound', ch: '', t: 
 fs.writeFileSync(path.join(OUT, 'search-index.json'), JSON.stringify({
   s: sections,
   g: G.map(g => [g[2], g[1], plain(g[4])]),
-  t: TR.map(r => [r[1], r[0], r[4]])
+  t: TR.map(r => [r[1], r[0], r[8]])
 }));
 const amap = Object.fromEntries(Object.entries(anchors).map(([id, pid]) => [id, byId[id] ? url(id) : `${url(pid)}#${id}`]));
 for (const [o, n] of Object.entries(OLD)) amap[o] = url(n);
